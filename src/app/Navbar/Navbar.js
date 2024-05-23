@@ -2,14 +2,10 @@
 
 import React, { useState } from 'react';
 import { Flex, Button, Input, Switch, IconButton, useColorMode, Icon, Image } from '@chakra-ui/react';
-
 import Link from 'next/link';
 
 function Navbar({ onSearch }) {
- 
   const { colorMode, toggleColorMode } = useColorMode();
-
-  
 
   return (
     <div>
@@ -32,22 +28,20 @@ function Navbar({ onSearch }) {
           h="50px"
         />
         <Flex align="center">
-        <ul style={{ display: 'flex', listStyle: 'none', marginLeft: 0, padding: 0, color: 'green' }}>
-  <li style={{ marginRight: '20px' }}>
-    <Link href={'/'}>
-      Home
-    </Link>
-  </li>
-  <li>
-    <Link href={'/characters'}>
-      Characters
-    </Link>
-  </li>
-</ul>
-
+          <ul style={{ display: 'flex', listStyle: 'none', marginLeft: 0, padding: 0, color: 'green' }}>
+            <li style={{ marginRight: '20px' }}>
+              <Link href={'/'}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href={'/characters'}>
+                Characters
+              </Link>
+            </li>
+          </ul>
         </Flex>
         <Flex align="center">
-         
           <IconButton
             aria-label="Toggle dark mode"
             // icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}

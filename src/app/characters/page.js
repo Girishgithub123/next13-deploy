@@ -6,7 +6,6 @@ import { FaHeart } from 'react-icons/fa';
 import NextLink from 'next/link';
 import PagingControls from '../PageControls/PagingControls';
 
-
 const People = () => {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,7 +51,6 @@ const People = () => {
     setPage(pageNum);
   };
 
-  
   const toggleFavorite = (personId) => {
     setFavorites(prevFavorites => ({
       ...prevFavorites,
@@ -70,8 +68,6 @@ const People = () => {
     person.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-
-  
   const displayFavorites = () => {
     const favoriteIds = Object.keys(favorites).filter(personId => favorites[personId]);
     if (favoriteIds.length > 0) {
@@ -84,8 +80,6 @@ const People = () => {
   if (loading) {
     return (
       <Center className="cs-loader show" height="100vh">
-
-
         <Box className="cs-loader__media" mb="4">
           <img
             loading="lazy"
@@ -94,11 +88,9 @@ const People = () => {
             maxW="8rem"
             maxH="8rem"
           />
-
           <Text fontWeight="bold" fontSize="2xl" color="white" mb="2">
             Loading...
           </Text>
-
           <Center>
             <Box textAlign="center">
               <Box
@@ -112,7 +104,6 @@ const People = () => {
                 position="relative"
                 display="inline-block"
                 backgroundClip="text"
-
                 _before={{
                   content: "''",
                   position: "absolute",
@@ -120,7 +111,6 @@ const People = () => {
                   left: "0",
                   right: "0",
                   bottom: "0",
-
                 }}
                 _after={{
                   content: "''",
@@ -129,7 +119,6 @@ const People = () => {
                   left: "0",
                   right: "0",
                   bottom: "0",
-
                 }}
               >
                 L
@@ -172,12 +161,10 @@ const People = () => {
                 bottom: "0",
               }}
             >
-
             </Box>
             {/* Add similar Box components for other letters */}
           </Box>
         </Center>
-
       </Center>
     );
   }
@@ -192,13 +179,10 @@ const People = () => {
 
   return (
     <Container maxW="container.lg" py={10} bg={`url("/star-wars2.jpg")`}>
-
-
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
-
         height="100px"
         margin={0}
         padding={0}
@@ -245,14 +229,10 @@ const People = () => {
             value={searchQuery}
             onChange={handleSearchChange}
           />
-          {/* <Box className="search-btn">
-            <Icon as={SearchIcon} boxSize={22} />
-          </Box> */}
         </Box>
         <Flex justifyContent="flex-end" paddingRight="20px"> 
           <Button
             onClick={displayFavorites}
-            
             className="btn"
             type="button"
             display="flex"
@@ -261,7 +241,6 @@ const People = () => {
             width="13rem"
             overflow="hidden"
             height="3rem"
-
             borderRadius="5rem"
             transition="0.5s"
             _hover={{
@@ -277,10 +256,10 @@ const People = () => {
           >
             <strong>view favorites
             <Icon
-                    as={FaHeart}
-                    boxSize="1.2em"
-                   color="Red"
-                  /></strong>
+              as={FaHeart}
+              boxSize="1.2em"
+              color="Red"
+            /></strong>
             <Center
               id="container-stars"
               position="absolute"
@@ -300,7 +279,6 @@ const People = () => {
                   left="-100rem"
                   width="100%"
                   height="100%"
-                  // bgImage="radial-gradient(#ffffff 1px, transparent 1%)"
                   bgSize="50px 50px"
                   animation="animStarRotate 90s linear infinite"
                 />
@@ -311,23 +289,17 @@ const People = () => {
                   left="-50%"
                   width="170%"
                   height="500%"
-                  // bgImage="radial-gradient(#ffffff 1px, transparent 1%)"
                   bgSize="50px 50px"
                   opacity="0.5"
                   animation="animStar 60s linear infinite"
                 />
               </Box>
             </Center>
-
           </Button>
-          </Flex>
-        
+        </Flex>
       </Box>
       <Heading as="h1" size="xl" mb={6} textAlign="center">Characters Listing Screen</Heading>
-      <SimpleGrid columns={[1, 2, 3]} spacing={8} justifyItems="center"  >
-
-
-
+      <SimpleGrid columns={[1, 2, 3]} spacing={8} justifyItems="center">
         {filteredPeople.map((person) => {
           const personId = person.url.match(/\/people\/(\d+)\//)[1];
           return (
@@ -338,7 +310,6 @@ const People = () => {
               border="2px solid"
               borderColor="rgba(75, 30, 133, 0.5)"
               borderRadius="1.5em"
-              // backgroundColor="#16de27"
               color="black"
               p="1em"
               display="flex"
@@ -346,17 +317,13 @@ const People = () => {
               alignItems="center"
               flexDirection="column"
               gap="0.75em"
-            // sx={{ backdropFilter: 'blur(12px)' }}
             >
-              
               <NextLink href={`/characters/${personId}`} passHref>
                 <Link>
                   <Heading as="p" size="md" fontWeight="bold" mb="0.5rem">{person.name}</Heading>
                 </Link>
               </NextLink>
               <Text><strong>Gender:</strong> {person.gender}</Text>
-             
-
               <Flex justify="space-between" alignItems="center" pt="10px" borderTop="1px solid" borderColor="gray.200">
                 <Heading as="span" size="md" fontWeight="bold">add favorite</Heading>
                 <Button
@@ -382,15 +349,11 @@ const People = () => {
                     style={{ color: favorites[personId] ? 'red' : 'gray' }}
                   />
                 </Button>
-
               </Flex>
-
             </Box>
-
           );
         })}
       </SimpleGrid>
-
       <PagingControls
         totalCount={totalCount}
         totalCountDescription="Characters"

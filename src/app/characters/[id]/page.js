@@ -1,7 +1,6 @@
-// src/app/character/[id]/page.js
 "use client";
 import { useEffect, useState } from 'react';
-import { Box, Heading, Text,Center,SVG,Rect,Circle, Spinner, Container } from '@chakra-ui/react';
+import { Box, Heading, Text, Center, Spinner, Container } from '@chakra-ui/react';
 
 const CharacterPage = ({ params }) => {
   const { id } = params;
@@ -46,8 +45,8 @@ const CharacterPage = ({ params }) => {
   if (loading) {
     return (
       <Center className="loading-screen">
-      
-    </Center>
+        <Spinner size="xl" />
+      </Center>
     );
   }
 
@@ -60,39 +59,38 @@ const CharacterPage = ({ params }) => {
   }
 
   return (
-    <Container maxW="container.lg" py={10} bg={`url("/star-wars7.jpg")`}  >
+    <Container maxW="container.lg" py={10} bg={`url(&quot;/star-wars7.jpg&quot;)`}  >
       <Heading as="h1" size="xl" mb={6} textAlign="center">
         Character Detail Screen
       </Heading>
-      <center>
-      <Box 
-      p={5} shadow="md" borderWidth="1px" 
-      h="34em"
-              w="18em"
-              border="2px solid"
-              borderColor="rgba(75, 30, 133, 0.5)"
-              borderRadius="1.5em"
-              alignItems="center"  justifyContent="center"
-              transition="all 0.48s cubic-bezier(0.23, 1, 0.32, 1)"
-              backgroundColor="#7dace4"
-              
-     >
-       
-        
-        <Heading fontSize="xl" fonts="heading: 'Open Sans', sans-serif body:`'Raleway', sans-serif`"zzzzzzmb={2}>{character.name}</Heading>
-        <Text ><strong>Height:</strong> {character.height} cm</Text>
-        <Text><strong>Mass:</strong> {character.mass} kg</Text>
-        <Text><strong>Hair Color:</strong> {character.hair_color}</Text>
-        <Text><strong>Skin Color:</strong> {character.skin_color}</Text>
-        <Text><strong>Eye Color:</strong> {character.eye_color}</Text>
-        <Text><strong>Birth Year:</strong> {character.birth_year}</Text>
-        <Text><strong>Gender:</strong> {character.gender}</Text>
-        <Text><strong>Homeworld:</strong> {character.homeworld}</Text>
-        <Text><strong>Films:</strong> {character.films.join(', ')}</Text>
-        <Text><strong>Vehicles:</strong> {character.vehicles.join(', ')}</Text>
-        <Text><strong>Starships:</strong> {character.starships.join(', ')}</Text>
-      </Box>
-      </center>
+      <Center>
+        <Box 
+          p={5} shadow="md" borderWidth="1px" 
+          h="34em"
+          w="18em"
+          border="2px solid"
+          borderColor="rgba(75, 30, 133, 0.5)"
+          borderRadius="1.5em"
+          alignItems="center" justifyContent="center"
+          transition="all 0.48s cubic-bezier(0.23, 1, 0.32, 1)"
+          backgroundColor="#7dace4"
+        >
+          <Heading fontSize="xl" fontFamily="&apos;Open Sans&apos;, sans-serif" mb={2}>
+            {character.name}
+          </Heading>
+          <Text><strong>Height:</strong> {character.height} cm</Text>
+          <Text><strong>Mass:</strong> {character.mass} kg</Text>
+          <Text><strong>Hair Color:</strong> {character.hair_color}</Text>
+          <Text><strong>Skin Color:</strong> {character.skin_color}</Text>
+          <Text><strong>Eye Color:</strong> {character.eye_color}</Text>
+          <Text><strong>Birth Year:</strong> {character.birth_year}</Text>
+          <Text><strong>Gender:</strong> {character.gender}</Text>
+          <Text><strong>Homeworld:</strong> {character.homeworld}</Text>
+          <Text><strong>Films:</strong> {character.films.join(apos, apos)}</Text>
+          <Text><strong>Vehicles:</strong> {character.vehicles.join(apos, apos)}</Text>
+          <Text><strong>Starships:</strong> {character.starships.join(apos, apos)}</Text>
+        </Box>
+      </Center>
     </Container>
   );
 };

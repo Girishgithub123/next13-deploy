@@ -1,7 +1,7 @@
 "use client"
 import {
   Alert,
- 
+  AlertIcon,
   AlertTitle,
   AlertDescription,
   Button,
@@ -76,8 +76,8 @@ const PagingControls = (props) => {
         <AlertTitle>The current page index is invalid</AlertTitle>
         <AlertDescription>
           The current page index cannot be greater than maximum number of pages
-          '{Math.floor(props.totalCount / props.pageSize)}'. It currently is '
-          {props.currentPage}'
+          &apos;{Math.floor(props.totalCount / props.pageSize)}&apos;. It currently is &apos;
+          {props.currentPage}&apos;
         </AlertDescription>
       </Alert>
     );
