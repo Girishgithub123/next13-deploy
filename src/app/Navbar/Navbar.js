@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Flex, Button, Input, Switch, IconButton, useColorMode, Icon, Image } from '@chakra-ui/react';
-import { MoonIcon, SunIcon, SearchIcon } from '@chakra-ui/icons';
+
 import Link from 'next/link';
 
 function Navbar({ onSearch }) {
@@ -50,7 +50,7 @@ function Navbar({ onSearch }) {
          
           <IconButton
             aria-label="Toggle dark mode"
-            icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+            // icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
             onClick={toggleColorMode}
             variant="ghost"
             colorScheme="teal"

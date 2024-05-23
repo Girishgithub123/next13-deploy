@@ -1,7 +1,7 @@
 
 import {
   Alert,
-  AlertIcon,
+ 
   AlertTitle,
   AlertDescription,
   Button,
@@ -61,14 +61,8 @@ const PagingControls = (props) => {
 
   if (props.currentPage < 1) {
     return (
-      <Alert status="error">
-        <AlertIcon />
-        <AlertTitle>The current page index is invalid</AlertTitle>
-        <AlertDescription>
-          The current page index cannot be lower than 1. It currently is '
-          {props.currentPage}'
-        </AlertDescription>
-      </Alert>
+      <>
+      </>
     );
   }
 

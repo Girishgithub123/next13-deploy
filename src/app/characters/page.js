@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Heading, Text, Spinner, Container, Center, SimpleGrid, Image, Flex, Input, Link, Button, Icon } from '@chakra-ui/react';
 import { FaHeart } from 'react-icons/fa';
-import { SearchIcon } from "@chakra-ui/icons";
+// import { SearchIcon } from "@chakra-ui/icons";
 import NextLink from 'next/link';
 import PagingControls from '../PageControls/PagingControls';
 
@@ -245,9 +245,9 @@ const People = () => {
             value={searchQuery}
             onChange={handleSearchChange}
           />
-          <Box className="search-btn">
+          {/* <Box className="search-btn">
             <Icon as={SearchIcon} boxSize={22} />
-          </Box>
+          </Box> */}
         </Box>
         <Flex justifyContent="flex-end" paddingRight="20px"> 
           <Button
