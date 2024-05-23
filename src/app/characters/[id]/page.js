@@ -75,7 +75,7 @@ const CharacterPage = ({ params }) => {
           transition="all 0.48s cubic-bezier(0.23, 1, 0.32, 1)"
           backgroundColor="#7dace4"
         >
-          <Heading fontSize="xl" fontFamily="&apos;Open Sans&apos;, sans-serif" mb={2}>
+          <Heading fontSize="xl" fontFamily="'Open Sans', sans-serif" mb={2}>
             {character.name}
           </Heading>
           <Text><strong>Height:</strong> {character.height} cm</Text>
@@ -86,9 +86,15 @@ const CharacterPage = ({ params }) => {
           <Text><strong>Birth Year:</strong> {character.birth_year}</Text>
           <Text><strong>Gender:</strong> {character.gender}</Text>
           <Text><strong>Homeworld:</strong> {character.homeworld}</Text>
-          <Text><strong>Films:</strong> {character.films.join(apos, apos)}</Text>
-          <Text><strong>Vehicles:</strong> {character.vehicles.join(apos, apos)}</Text>
-          <Text><strong>Starships:</strong> {character.starships.join(apos, apos)}</Text>
+          {character.films.map((film, index) => (
+            <Text key={index}><strong>Film {index + 1}:</strong> {film}</Text>
+          ))}
+          {character.vehicles.map((vehicle, index) => (
+            <Text key={index}><strong>Vehicle {index + 1}:</strong> {vehicle}</Text>
+          ))}
+          {character.starships.map((starship, index) => (
+            <Text key={index}><strong>Starship {index + 1}:</strong> {starship}</Text>
+          ))}
         </Box>
       </Center>
     </Container>

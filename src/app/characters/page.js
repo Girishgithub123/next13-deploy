@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { Box, Heading, Text, Spinner, Container, Center, SimpleGrid, Image, Flex, Input, Link, Button, Icon } from '@chakra-ui/react';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart,FaSearch  } from 'react-icons/fa';
 // import { SearchIcon } from "@chakra-ui/icons";
 import NextLink from 'next/link';
 import PagingControls from '../PageControls/PagingControls';
@@ -229,6 +229,11 @@ const People = () => {
             value={searchQuery}
             onChange={handleSearchChange}
           />
+           <Icon
+              as={FaSearch}
+              boxSize="1.2em"
+              color="black"
+            />
         </Box>
         <Flex justifyContent="flex-end" paddingRight="20px"> 
           <Button
