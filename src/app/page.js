@@ -1,4 +1,4 @@
-
+"use client"
 import styles from "./page.module.css";
 import Navbar from "./Navbar/Navbar";
 import { Heading, Box, Image } from '@chakra-ui/react';
